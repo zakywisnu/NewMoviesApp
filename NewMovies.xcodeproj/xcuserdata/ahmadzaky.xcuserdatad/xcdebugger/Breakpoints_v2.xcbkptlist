@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "C850112E-9760-46E0-96F6-45D31622200F"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2EA13094-B8A1-4EE6-ACAE-4E8691E8C8AA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewMovies/Core/Data/MovieRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "getMovies()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2EA13094-B8A1-4EE6-ACAE-4E8691E8C8AA - 708b5a64ee83766e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NewMovies.MovieRepository.getMovies() -&gt; RxSwift.Observable&lt;Swift.Array&lt;NewMovies.MovieModel&gt;&gt;"
+                  moduleName = "NewMovies"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmadzaky/Documents/Zaky/MyWork/iOS/Dicoding/Expert/Submission/TMDb_swift/NewMovies/Core/Data/MovieRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "762">
+               </Location>
+               <Location
+                  uuid = "2EA13094-B8A1-4EE6-ACAE-4E8691E8C8AA - 2e678bd59225516a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #4 (Swift.Bool) -&gt; Swift.Bool in NewMovies.MovieRepository.getMovies() -&gt; RxSwift.Observable&lt;Swift.Array&lt;NewMovies.MovieModel&gt;&gt;"
+                  moduleName = "NewMovies"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmadzaky/Documents/Zaky/MyWork/iOS/Dicoding/Expert/Submission/TMDb_swift/NewMovies/Core/Data/MovieRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B0228A3C-D5AD-482E-B42F-6F3E31FE03D8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewMovies/Core/Data/MovieRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "getMovies()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B0228A3C-D5AD-482E-B42F-6F3E31FE03D8 - 118bf528ae7b983e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #5 (Swift.Bool) -&gt; RxSwift.Observable&lt;Swift.Array&lt;NewMovies.MovieModel&gt;&gt; in NewMovies.MovieRepository.getMovies() -&gt; RxSwift.Observable&lt;Swift.Array&lt;NewMovies.MovieModel&gt;&gt;"
+                  moduleName = "NewMovies"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmadzaky/Documents/Zaky/MyWork/iOS/Dicoding/Expert/Submission/TMDb_swift/NewMovies/Core/Data/MovieRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "87">
+               </Location>
+               <Location
+                  uuid = "B0228A3C-D5AD-482E-B42F-6F3E31FE03D8 - c2c63abbb16cc1f1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;NewMovies.MovieEntity&gt;) -&gt; Swift.Array&lt;NewMovies.MovieModel&gt; in closure #5 (Swift.Bool) -&gt; RxSwift.Observable&lt;Swift.Array&lt;NewMovies.MovieModel&gt;&gt; in NewMovies.MovieRepository.getMovies() -&gt; RxSwift.Observable&lt;Swift.Array&lt;NewMovies.MovieModel&gt;&gt;"
+                  moduleName = "NewMovies"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmadzaky/Documents/Zaky/MyWork/iOS/Dicoding/Expert/Submission/TMDb_swift/NewMovies/Core/Data/MovieRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "30">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BD934139-D6CC-4F12-B111-5008CEF91088"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewMovies/Core/Domain/UseCase/HomeInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "getMovies()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

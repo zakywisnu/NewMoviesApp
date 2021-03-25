@@ -22,7 +22,7 @@ struct MovieResponse: Codable {
         case overview = "overview"
     }
     
-    let id: String?
+    let id: Int?
     let title: String?
     let voteAverage: Double?
     let posterPath: String?

@@ -10,8 +10,8 @@ import RxSwift
 
 protocol MovieRepositoryProtocol {
     func getMovies() -> Observable<[MovieModel]>
-    func getMovieDetail(by id: String) -> Observable<MovieModel>
-    func updateFavoriteMovie(by id: String) -> Observable<MovieModel>
+    func getMovieDetail(by id: Int) -> Observable<MovieModel>
+    func updateFavoriteMovie(by id: Int) -> Observable<MovieModel>
     func getFavoriteMovies() -> Observable<[MovieModel]>
 }
 
@@ -37,7 +37,7 @@ extension MovieRepository: MovieRepositoryProtocol {
             .map{ MovieMapper.mapMovieEntitiesToDomains(input: $0)}
     }
     
-    func updateFavoriteMovie(by id: String) -> Observable<MovieModel> {
+    func updateFavoriteMovie(by id: Int) -> Observable<MovieModel> {
         return self.local.updateFavoriteMovies(by: id)
             .map{ MovieMapper.mapMovieEntityToDomain(input: $0)}
     }
@@ -45,17 +45,18 @@ extension MovieRepository: MovieRepositoryProtocol {
     func getMovies() -> Observable<[MovieModel]> {
         return self.local.getMovies()
             .map{ MovieMapper.mapMovieEntitiesToDomains(input: $0) }
+            .filter{!$0.isEmpty}
             .ifEmpty ( switchTo: self.remote.getMovieList()
                 .map{ MovieMapper.mapMovieResponsesToEntities(input: $0) }
                 .flatMap{ self.local.addMovies(from: $0)}
                 .filter{$0}
                 .flatMap{ _ in self.local.getMovies()
                     .map{ MovieMapper.mapMovieEntitiesToDomains(input: $0)}
-
                 }
             )
     }
-    func getMovieDetail(by id: String) -> Observable<MovieModel> {
+
+    func getMovieDetail(by id: Int) -> Observable<MovieModel> {
         return self.local.getDetailMovie(by: id)
             .map{ MovieMapper.mapMovieEntityToDomain(input: $0)}
     }

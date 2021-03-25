@@ -10,6 +10,14 @@ import RxSwift
 import RealmSwift
 import Combine
 
+protocol LocalDataSourceProtocol: class {
+    func getMovies() -> Observable<[MovieEntity]>
+    func addMovies(from movies: [MovieEntity]) -> Observable<Bool>
+    func updateFavoriteMovies(by idMovies: Int) -> Observable<MovieEntity>
+    func getDetailMovie(by id: Int) -> Observable<MovieEntity>
+    func getFavoriteMovies() -> Observable<[MovieEntity]>
+}
+
 final class LocalDataSource: NSObject {
     private let realm: Realm?
     
@@ -21,14 +29,8 @@ final class LocalDataSource: NSObject {
         return LocalDataSource(realm: realmDatabase)
     }
 }
+ 
 
-protocol LocalDataSourceProtocol: class {
-    func getMovies() -> Observable<[MovieEntity]>
-    func addMovies(from movies: [MovieEntity]) -> Observable<Bool>
-    func updateFavoriteMovies(by idMovies: String) -> Observable<MovieEntity>
-    func getDetailMovie(by id: String) -> Observable<MovieEntity>
-    func getFavoriteMovies() -> Observable<[MovieEntity]>
-}
 
 extension LocalDataSource: LocalDataSourceProtocol {
     
@@ -65,12 +67,12 @@ extension LocalDataSource: LocalDataSourceProtocol {
         }
     }
     
-    func getDetailMovie(by id: String) -> Observable<MovieEntity> {
+    func getDetailMovie(by id: Int) -> Observable<MovieEntity> {
         return Observable<MovieEntity>.create{ observer in
             if let realm = self.realm {
                 let movies: Results<MovieEntity> = {
                     realm.objects(MovieEntity.self)
-                        .filter("id = '\(id)'")
+                        .filter("id = \(id)")
                 }()
                 if let movie = movies.first {
                     observer.onNext(movie)
@@ -107,10 +109,10 @@ extension LocalDataSource: LocalDataSourceProtocol {
         }
     }
     
-    func updateFavoriteMovies(by idMovies: String) -> Observable<MovieEntity> {
+    func updateFavoriteMovies(by idMovies: Int) -> Observable<MovieEntity> {
         return Observable<MovieEntity>.create{ observer in
             if let realm = self.realm, let movieEntity =  {
-                realm.objects(MovieEntity.self).filter("id = '\(idMovies)'")
+                realm.objects(MovieEntity.self).filter("id = \(idMovies)")
             }().first {
                 do {
                     try realm.write{
@@ -120,7 +122,7 @@ extension LocalDataSource: LocalDataSourceProtocol {
                     observer.onCompleted()
                 } catch {
                     observer.onError(DatabaseError.requestFailed)
-                }
+                } 
             } else {
                 observer.onError(DatabaseError.invalidInstance)
             }

@@ -10,6 +10,7 @@ import RxSwift
 
 protocol HomeUseCase {
     func getMovies() -> Observable<[MovieModel]>
+    func updateFavoriteMovie(id: Int) -> Observable<MovieModel>
 }
 
 class HomeInteractor: HomeUseCase {
@@ -22,6 +23,9 @@ class HomeInteractor: HomeUseCase {
     
     func getMovies() -> Observable<[MovieModel]> {
         return repository.getMovies()
+    }
+    func updateFavoriteMovie(id: Int) -> Observable<MovieModel> {
+        return repository.updateFavoriteMovie(by: id)
     }
     
 }

@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 class MovieEntity: Object {
-    @objc dynamic var id: String = ""
+    @objc dynamic var id: Int = 0
     @objc dynamic var title: String = ""
     @objc dynamic var overview: String = ""
     @objc dynamic var posterPath: String = ""

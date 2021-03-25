@@ -11,7 +11,7 @@ import Alamofire
 
 protocol RemoteDataSourceProtocol: class {
     func getMovieList() -> Observable<[MovieResponse]>
-    func getMovieDetail(id: String) -> Observable<MovieResponse>
+    func getMovieDetail(id: Int) -> Observable<MovieResponse>
 }
 
 final class RemoteDataSource: NSObject {
@@ -20,7 +20,7 @@ final class RemoteDataSource: NSObject {
 }
 
 extension RemoteDataSource: RemoteDataSourceProtocol {
-    func getMovieDetail(id: String) -> Observable<MovieResponse> {
+    func getMovieDetail(id: Int) -> Observable<MovieResponse> {
         return Observable<MovieResponse>.create{ observer in
             if let url = URL(string: Endpoints.Gets.detailMovie(id: id).url){
                 AF.request(url)

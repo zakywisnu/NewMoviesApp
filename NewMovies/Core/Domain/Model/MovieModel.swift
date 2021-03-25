@@ -8,7 +8,7 @@
 import Foundation
 
 struct MovieModel: Identifiable, Equatable {
-    let id: String
+    let id: Int
     let title: String
     var posterPath: String
     var voteAverage: Double

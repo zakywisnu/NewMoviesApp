@@ -26,18 +26,22 @@ struct MovieList: View {
                     VStack(alignment:.leading) {
                         Text(movie.title)
                             .font(.caption)
-                            .frame(width: 100, height: 40)
-                            .padding(.leading,1)
+                            .fontWeight(.bold)
+                            .frame(width: 100, height: 40,alignment: .leading)
+                            .padding(.leading,8)
+                            .foregroundColor(Color.black.opacity(0.9))
+                        
                         Text(movie.releaseDate)
-                            .font(.caption)
+                            .font(.caption2)
                             .frame(height: 20)
                             .padding(.leading,10)
                             .padding(.bottom, 5)
+                            .foregroundColor(Color.black.opacity(0.9))
                     }
                     Spacer()
-                    RingView(width: 33, height: 33, percent: CGFloat(movie.voteAverage))
+                    RingView(width: 33, height: 33, percent: CGFloat(movie.voteAverage), show: true)
                         .offset(x: -5)
-                        .animation(Animation.easeInOut.delay(0.3))
+                        .animation(Animation.easeInOut)
                     
                 }
                 .frame(height: 60)
@@ -54,7 +58,7 @@ struct MovieList_Previews: PreviewProvider {
     static var previews: some View {
         MovieList(
             movie: MovieModel(
-                id: "1",
+                id: 0,
                 title: "Wonder Woman 1984",
                 posterPath: "/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",
                 voteAverage: 8.0,

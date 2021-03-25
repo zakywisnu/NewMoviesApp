@@ -20,7 +20,7 @@ protocol Endpoint {
 enum Endpoints {
     enum Gets: Endpoint {
         case popular
-        case detailMovie(id: String)
+        case detailMovie(id: Int)
         
         public var url: String {
             switch self {

@@ -10,10 +10,11 @@ import SwiftUI
 @main
 struct NewMoviesApp: App {
     
-    @StateObject var presenter = HomePresenter(homeUseCase: Injection().provideHome())
+    @StateObject var homePresenter = HomePresenter(homeUseCase: Injection().provideHome())
+    @StateObject var favoritePresenter = FavoritePresenter(favoriteUseCase: Injection().provideFavorite())
     var body: some Scene {
         WindowGroup {
-            ContentView(presenter: presenter)
+            ContentView(homePresenter: homePresenter, favoritePresenter: favoritePresenter)
         }
     }
 }
